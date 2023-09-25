@@ -13,7 +13,7 @@ const Donationdata = ({ donation }) => {
   <div className="card-body">
   <h2 style={{color: `${data.Text_button_bg_color}`}} className="card-title text-[]">{data.Title}</h2>
   <h1 style={{ background: `${data.Category_bg_Color}`, color: `${data.Text_button_bg_color}` }} className="card-title w-[110px] border-[2px] px-[10px] ">{data.Category}</h1>
-<p style={{color: `${data.Text_button_bg_color}`}}>{data.Price}</p>
+<p style={{color: `${data.Text_button_bg_color}`}}>Price: ${data.Price}</p>
 </div>
 </div></Link>
                 ))

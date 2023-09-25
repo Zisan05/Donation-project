@@ -1,7 +1,28 @@
+import swal from "sweetalert";
 
 const Cards = ({card}) => {
 
-    const {Picture, Title, Description, Price, Text_button_bg_color} = card;
+    const {id, Picture, Title, Description, Price, Text_button_bg_color} = card;
+
+    const handltoadddonation = () =>{
+  
+  const addedArray = [];
+ 
+  const donationItem = JSON.parse(localStorage.getItem('donations'))
+
+  if(!donationItem){
+    addedArray.push(card)
+    localStorage.setItem('donations',JSON.stringify(addedArray)) 
+    swal("Good job!", "Product added successfully", "success"); 
+  }
+  else{
+        addedArray.push(...donationItem, card);
+    localStorage.setItem('donations',JSON.stringify(addedArray)) 
+    swal("Good job!", "Product added successfully", "success");
+    
+  }
+
+    }
 
     return (
         <div>
@@ -11,8 +32,8 @@ const Cards = ({card}) => {
   </div>
      <div className="h-[96px] bg-[#0B0B0B80] relative bottom-24">
      <div className="absolute top-[30%] left-10">
-     <button style={{ backgroundColor:Text_button_bg_color}}
-   className="p-2 rounded-xl text-white font-semibold"  > Donate $ {Price}
+     <button onClick={handltoadddonation} style={{ backgroundColor:Text_button_bg_color}}
+   className="p-2 rounded-xl text-white font-semibold"  > Donation $ {Price}
   </button>
  </div>
  </div>
