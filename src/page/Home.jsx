@@ -9,7 +9,7 @@ console.log(donation);
 
     return (
         <div>
-        <Banner></Banner>
+        <Banner donation = {donation}></Banner>
         <Donationdata donation={donation}></Donationdata>
         </div>
     );

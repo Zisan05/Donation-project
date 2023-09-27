@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 
 
-const Banner = () => {
+const Banner = ({donation}) => {
+
+const [searchValue, setSearchValue] = useState()
+
+
+
+const handlSearch = e => {
+
+  e.preventDefault();
+
+console.log(e.target.name.value);
+setSearchValue(e.target.name.value);
+
+}
+
     return (
         
       <div>
@@ -12,8 +27,10 @@ const Banner = () => {
         <h1 className=" font-bold text-black text-[18px] md:text-[25px] lg:text-[35px]  mb-[30px]">I Grow By Helping People In Need</h1>
          
           <div className="lg:ml-[100px]  ">
-          <input className=" rounded-[2px] px-[15px] lg:px-[40px] py-[5px] border-[1px] border-black" type="text" name="" id="" />
-          <input className=" rounded-[2px] font-semibold text-white bg-[#FF444A] px-[15px] py-[7px]" type="submit" value="Submit" />
+          <form onSubmit={handlSearch}>
+          <input className=" rounded-[2px] px-[15px] lg:px-[40px] py-[5px] border-[1px] border-black" type="text" name="name" id="" />
+          <button className=" rounded-[2px] font-semibold text-white bg-[#FF444A] px-[15px] py-[7px]">Submit</button>
+          </form>
           </div>
         </div>
       </div>

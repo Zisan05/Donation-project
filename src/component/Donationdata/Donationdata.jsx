@@ -7,6 +7,7 @@ const Donationdata = ({ donation }) => {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mt-[100px]">
             {
                 donation.map(data => (
+
 <Link to={`/card/${data.id}`}>
  <div style={{ background: `${data.Card_bg_color}` }} className="card  bg-base-100 shadow-xl">
   <figure><img className="w-full h-[200px]" src={data.Picture} alt="" /></figure>
@@ -16,6 +17,7 @@ const Donationdata = ({ donation }) => {
 <p style={{color: `${data.Text_button_bg_color}`}}>Price: ${data.Price}</p>
 </div>
 </div></Link>
+
                 ))
             }
         </div>

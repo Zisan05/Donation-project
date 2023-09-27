@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 const Cards = ({card}) => {
@@ -35,6 +36,8 @@ const Cards = ({card}) => {
      <button onClick={handltoadddonation} style={{ backgroundColor:Text_button_bg_color}}
    className="p-2 rounded-xl text-white font-semibold"  > Donation $ {Price}
   </button>
+  <Link to = '/'>
+  <button className="p-2 bg-red-500 rounded-xl text-white font-semibold ml-[20px]">Add more donation </button></Link>
  </div>
  </div>
 </div>
